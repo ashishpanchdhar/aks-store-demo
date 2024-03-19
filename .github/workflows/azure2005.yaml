@@ -6,10 +6,10 @@ name: azure2005
     workflow_dispatch: {}
 env:
     ACR_RESOURCE_GROUP: Loyalist
-    AZURE_CONTAINER_REGISTRY: azure2005
+    AZURE_CONTAINER_REGISTRY: acrworkflow1710859304040
     CLUSTER_NAME: azure2005
     CLUSTER_RESOURCE_GROUP: Loyalist
-    CONTAINER_NAME: image-workflow-1710858319469
+    CONTAINER_NAME: image-workflow-1710859304040
     DEPLOYMENT_MANIFEST_PATH: |
         ./manifests/istio/gateway.yaml
 jobs:
@@ -61,4 +61,4 @@ jobs:
                 action: deploy
                 images: ${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io/${{ env.CONTAINER_NAME }}:${{ github.sha }}
                 manifests: ${{ env.DEPLOYMENT_MANIFEST_PATH }}
-                namespace: namespace-workflow-1710858319469
+                namespace: namespace-workflow-1710859304040
